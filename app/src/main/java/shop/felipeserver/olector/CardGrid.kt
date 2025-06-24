@@ -15,6 +15,11 @@ import androidx.compose.foundation.lazy.grid.GridCells
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.navigation.compose.NavHost
+import androidx.navigation.compose.composable
+import androidx.navigation.compose.rememberNavController
+import androidx.activity.ComponentActivity
+import androidx.activity.compose.setContent
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -29,9 +34,13 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
+import androidx.navigation.NavType
+import androidx.navigation.navArgument
 
 @Composable
-fun CardsList(listaDecks: List<ItemImagem>) {
+fun CardsList(listaDecks: List<ItemImagem>, navController: NavController) {
+
     Column(
         modifier = Modifier
             .background(AppConstants.backgroundColor)
@@ -45,9 +54,9 @@ fun CardsList(listaDecks: List<ItemImagem>) {
                 ImageCard(
                     itemId = listaDecks[item].idImagem,
                     itemName = listaDecks[item].nome,
-                    itemDesc = listaDecks[item].descricao
+                    itemDesc = listaDecks[item].descricao,
+                    navController = navController
                 )
-
             }
         }
     }
@@ -57,7 +66,7 @@ fun CardsList(listaDecks: List<ItemImagem>) {
 
 
 @Composable
-fun ImageCard(itemId: Int, itemName: Int, itemDesc: Int) {
+fun ImageCard(itemId: Int, itemName: Int, itemDesc: Int, navController: NavController) {
     val painter = painterResource(itemId)
     val imageWidth =
         painter.intrinsicSize.width.dp / LocalContext.current.resources.displayMetrics.density
@@ -67,7 +76,7 @@ fun ImageCard(itemId: Int, itemName: Int, itemDesc: Int) {
             .width(imageWidth)
             .clip(RoundedCornerShape(5.dp))
             .clickable(onClick = {
-                
+                navController.navigate("details_screen/$itemId")
             })
             .padding(5.dp)
             .border(
@@ -134,12 +143,16 @@ fun CardsListPreview() {
         ItemImagem(R.string.N_19_, R.string.D_19_, R.drawable._0_19_thesun),
         ItemImagem(R.string.N_20_, R.string.D_20_, R.drawable._0_20_judgement),
         ItemImagem(R.string.N_21_, R.string.D_21_, R.drawable._0_21_theworld),
-
-        )
-    CardsList(listaDecks = sampleData)
+    )
+    val previewNavController = rememberNavController()
+    CardsList(listaDecks = sampleData, navController = previewNavController)
 }
 @Preview
 @Composable
 fun ImageCardPreview() {
-    ImageCard(itemId = R.drawable._0_00_thefool, itemName = R.string.N_00_, itemDesc = R.string.D_00_)
+    val previewNavController = rememberNavController()
+    ImageCard(
+        itemId = R.drawable._0_00_thefool, itemName = R.string.N_00_, itemDesc = R.string.D_00_,
+        navController = previewNavController
+    )
 }

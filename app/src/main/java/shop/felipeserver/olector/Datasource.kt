@@ -19,7 +19,7 @@ object AppConstants {
     val cardBorderColor = Color(0xFF705D23)
 
     //Font Sizes
-    val cardTitleFontSize = 16.sp
+    val cardTitleFontSize = 18.sp
     val cardDescriptionFontSize = 14.sp
 
     //Layout
