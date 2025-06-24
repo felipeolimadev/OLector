@@ -1,0 +1,1 @@
+Simple Tarot Reading App
