@@ -1,0 +1,91 @@
+<resources>
+    <string name="app_name">O Lector</string>
+
+    <!-- Card 00 -->
+    <string name="N_00_">The Fool</string>
+    <string name="D_00_">Represents new beginnings, spontaneity, freedom, and innocence. Symbolizes unlimited potential and the life journey about to begin.</string>
+
+    <!-- Card 01 -->
+    <string name="N_01_">The Magician</string>
+    <string name="D_01_">Represents the power of manifestation, the ability to turn dreams into reality, and the union between spiritual and material realms.</string>
+
+    <!-- Card 02 -->
+    <string name="N_02_">The High Priestess</string>
+    <string name="D_02_">Symbolizes intuition, mystery, inner wisdom, and hidden knowledge. Represents the connection with the subconscious and feminine wisdom.</string>
+
+    <!-- Card 03 -->
+    <string name="N_03_">The Empress</string>
+    <string name="D_03_">Represents fertility, abundance, motherhood, nature, and creativity. Symbolizes feminine power, nurturing, and growth.</string>
+
+    <!-- Card 04 -->
+    <string name="N_04_">The Emperor</string>
+    <string name="D_04_">Symbolizes authority, structure, control, leadership, and stability. Represents masculine power, protection, and established order.</string>
+
+    <!-- Card 05 -->
+    <string name="N_05_">The Hierophant</string>
+    <string name="D_05_">Represents tradition, conformity, morality, ethics, and formal education. Symbolizes the search for meaning and spiritual guidance.</string>
+
+    <!-- Card 06 -->
+    <string name="N_06_">The Lovers</string>
+    <string name="D_06_">Symbolizes love, harmony, relationships, values, and important choices. Represents the union of opposites and heart decisions.</string>
+
+    <!-- Card 07 -->
+    <string name="N_07_">The Chariot</string>
+    <string name="D_07_">Represents determination, willpower, success, assertiveness, and control. Symbolizes victory through perseverance and self-control.</string>
+
+    <!-- Card 08 -->
+    <string name="N_08_">Strength</string>
+    <string name="D_08_">Symbolizes courage, persuasion, influence, compassion, and inner strength. Represents the power of gentleness and control over emotions.</string>
+
+    <!-- Card 09 -->
+    <string name="N_09_">The Hermit</string>
+    <string name="D_09_">Represents introspection, inner search, solitude, wisdom, and guidance. Symbolizes the journey of self-knowledge and enlightenment.</string>
+
+    <!-- Card 10 -->
+    <string name="N_10_">Wheel of Fortune</string>
+    <string name="D_10_">Symbolizes change, cycles, destiny, luck, and opportunities. Represents lifes ups and downs and the constant movement of the universe.</string>
+
+    <!-- Card 11 -->
+    <string name="N_11_">Justice</string>
+    <string name="D_11_">Represents truth, justice, cause and effect, honesty, and responsibility. Symbolizes balance, truth, and the law of karma.</string>
+
+    <!-- Card 12 -->
+    <string name="N_12_">The Hanged Man</string>
+    <string name="D_12_">Symbolizes sacrifice, surrender, pause, new perspective, and enlightenment. Represents the need to see things from a different angle.</string>
+
+    <!-- Card 13 -->
+    <string name="N_13_">Death</string>
+    <string name="D_13_">Represents transformation, change, end of cycles, and new beginnings. Symbolizes the need to let go of what no longer serves.</string>
+
+    <!-- Card 14 -->
+    <string name="N_14_">Temperance</string>
+    <string name="D_14_">Symbolizes balance, moderation, patience, purpose, and harmony. Represents the union of opposites and the search for the middle path.</string>
+
+    <!-- Card 15 -->
+    <string name="N_15_">The Devil</string>
+    <string name="D_15_">Represents slavery, materialism, vices, shadows, and illusion. Symbolizes the chains that bind us and the need for liberation.</string>
+
+    <!-- Card 16 -->
+    <string name="N_16_">The Tower</string>
+    <string name="D_16_">Symbolizes sudden change, chaos, revelation, destruction, and liberation. Represents the fall of false structures and the revelation of truth.</string>
+
+    <!-- Card 17 -->
+    <string name="N_17_">The Star</string>
+    <string name="D_17_">Represents hope, faith, purpose, renewal, and inspiration. Symbolizes light after darkness and connection with the divine.</string>
+
+    <!-- Card 18 -->
+    <string name="N_18_">The Moon</string>
+    <string name="D_18_">Symbolizes illusion, fear, anxiety, subconscious, and intuition. Represents the dark side of the psyche and the need to face our fears.</string>
+
+    <!-- Card 19 -->
+    <string name="N_19_">The Sun</string>
+    <string name="D_19_">Represents joy, success, vitality, positivity, and achievement. Symbolizes the light of consciousness and the brightness of truth.</string>
+
+    <!-- Card 20 -->
+    <string name="N_20_">Judgement</string>
+    <string name="D_20_">Symbolizes rebirth, awakening, inner calling, and transformation. Represents the moment of awakening to a new consciousness.</string>
+
+    <!-- Card 21 -->
+    <string name="N_21_">The World</string>
+    <string name="D_21_">Represents completeness, integration, achievement, travel, and success. Symbolizes the end of a cycle and the beginning of a new journey.</string>
+</resources>
