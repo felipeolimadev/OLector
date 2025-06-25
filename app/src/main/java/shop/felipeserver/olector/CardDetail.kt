@@ -2,7 +2,6 @@ package shop.felipeserver.olector
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
-import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
@@ -22,7 +21,8 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import shop.felipeserver.olector.AppConstants.cardPadding
+import shop.felipeserver.olector.Color.cardPadding
+import shop.felipeserver.olector.Color.cardTitleFontSize
 import shop.felipeserver.olector.Datasource.carregarItens
 
 @Composable
@@ -61,7 +61,7 @@ fun CardDetail(idDetail: Int, nameDetail: Int, descDetail: Int) {
             ) {
                 Text(
                     text = stringResource(id = nameDetail),
-                    fontSize = AppConstants.cardTitleFontSize
+                    fontSize = cardTitleFontSize
                 )
                 Text(
                     text = stringResource(id = descDetail)

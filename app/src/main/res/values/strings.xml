@@ -96,4 +96,7 @@ In fringilla bibendum venenatis. Quisque pretium hendrerit elit, ac tempus lorem
     <!-- Card 21 -->
     <string name="N_21_">The World</string>
     <string name="D_21_">Represents completeness, integration, achievement, travel, and success. Symbolizes the end of a cycle and the beginning of a new journey.</string>
+    <string name="question_title">What troubles your soul?</string>
+    <string name="thinking_question">Think of a question. Something that stirs your soul. When you\'re ready, press to reveal the truth.</string>
+    <string name="write_question">What is your question?</string>
 </resources>

@@ -1,30 +1,38 @@
 package shop.felipeserver.olector
 
-import androidx.compose.foundation.Image
-
-import androidx.compose.foundation.background
+import androidx.compose.ui.graphics.Shape
 import androidx.compose.foundation.BorderStroke
+import androidx.compose.foundation.Image
+import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
+import androidx.compose.foundation.interaction.MutableInteractionSource
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.WindowInsets
 import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.lazy.grid.GridCells
+import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.lazy.grid.GridCells
 import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.navigation.compose.NavHost
-import androidx.navigation.compose.composable
-import androidx.navigation.compose.rememberNavController
-import androidx.activity.ComponentActivity
-import androidx.activity.compose.setContent
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Add
+import androidx.compose.material3.FabPosition
+import androidx.compose.material3.FloatingActionButton
+import androidx.compose.material3.FloatingActionButtonDefaults
+import androidx.compose.material3.FloatingActionButtonElevation
+import androidx.compose.material3.Icon
+import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
+import androidx.compose.material3.contentColorFor
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
@@ -35,34 +43,56 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
-import androidx.navigation.NavType
-import androidx.navigation.navArgument
+import androidx.navigation.compose.rememberNavController
+import shop.felipeserver.olector.ui.theme.FABButtonColor
+import shop.felipeserver.olector.ui.theme.InfinityIcon
+import shop.felipeserver.olector.ui.theme.backgroundColor
+import shop.felipeserver.olector.ui.theme.cardBackgroundColor
+import shop.felipeserver.olector.ui.theme.cardBorderColor
+import shop.felipeserver.olector.ui.theme.cardTitleColor
 
 @Composable
-fun CardsList(listaDecks: List<ItemImagem>, navController: NavController) {
+fun CardGrid(listaDecks: List<ItemImagem>, navController: NavController) {
 
-    Column(
-        modifier = Modifier
-            .background(AppConstants.backgroundColor)
-            .fillMaxHeight()
-            .fillMaxWidth()
-    ) {
-        LazyVerticalGrid(
-            columns = GridCells.Adaptive(150.dp)
-        ) {
-            items(listaDecks.size) { item ->
-                ImageCard(
-                    itemId = listaDecks[item].idImagem,
-                    itemName = listaDecks[item].nome,
-                    itemDesc = listaDecks[item].descricao,
-                    navController = navController
-                )
+    Scaffold(
+        //Habilite o edge to edge e deve ser sempre usado com scaffold
+        contentWindowInsets = WindowInsets(0.dp), floatingActionButton = {
+            FloatingActionButton(
+                onClick = { navController.navigate("question_screen") }, containerColor = FABButtonColor
+            ) {
+                Icon(InfinityIcon,
+                    contentDescription = "Add",
+                    modifier = Modifier.size(28.dp))
             }
+        }, floatingActionButtonPosition = FabPosition.Center
+
+    ) { innerPadding ->
+
+        Column(
+            modifier = Modifier
+                .background(backgroundColor)
+                .fillMaxHeight()
+                .fillMaxWidth()
+
+        ) {
+
+            LazyVerticalGrid(
+                columns = GridCells.Adaptive(150.dp)
+            ) {
+                items(listaDecks.size) { item ->
+                    ImageCard(
+                        itemId = listaDecks[item].idImagem,
+                        itemName = listaDecks[item].nome,
+                        itemDesc = listaDecks[item].descricao,
+                        navController = navController
+                    )
+                }
+            }
+
         }
     }
 
 }
-
 
 
 @Composable
@@ -80,18 +110,14 @@ fun ImageCard(itemId: Int, itemName: Int, itemDesc: Int, navController: NavContr
             })
             .padding(5.dp)
             .border(
-                BorderStroke(1.dp, AppConstants.cardBorderColor),
-                RoundedCornerShape(5.dp)
+                BorderStroke(1.dp, cardBorderColor), RoundedCornerShape(5.dp)
             )
 
     ) {
-
-
         Image(
             painter = painterResource(itemId),
             contentDescription = itemDesc.toString(),
-            modifier = Modifier
-                .fillMaxWidth(),
+            modifier = Modifier.fillMaxWidth(),
             contentScale = ContentScale.Crop
 
         )
@@ -99,13 +125,13 @@ fun ImageCard(itemId: Int, itemName: Int, itemDesc: Int, navController: NavContr
         Text(
             modifier = Modifier
                 .align(Alignment.BottomCenter)
-                .background(AppConstants.cardBackgroundColor)
+                .background(cardBackgroundColor)
                 .fillMaxWidth()
                 .padding(start = 20.dp, end = 20.dp, top = 3.dp, bottom = 3.dp),
             fontSize = 16.sp,
             text = stringResource(itemName),
             textAlign = TextAlign.Center,
-            color = AppConstants.cardTitleColor,
+            color = cardTitleColor,
             overflow = TextOverflow.Ellipsis,
             maxLines = 1
 
@@ -115,7 +141,29 @@ fun ImageCard(itemId: Int, itemName: Int, itemDesc: Int, navController: NavContr
     }
 }
 
+@Composable
+fun FloatingActionButton(
+    onClick: () -> Unit,
+    modifier: Modifier = Modifier,
+    shape: Shape = FloatingActionButtonDefaults.shape,
+    containerColor: Color = FABButtonColor,
+    contentColor: Color = FABButtonColor,
+    elevation: FloatingActionButtonElevation = FloatingActionButtonDefaults.elevation(),
+    interactionSource: MutableInteractionSource? = null,
+    content: @Composable () -> Unit,
+) {
 
+}
+
+@Preview
+@Composable
+fun FloatingActionButtonSample() {
+    FloatingActionButton(
+        onClick = { /* do something */ },
+    ) {
+        Icon(Icons.Filled.Add, "Localized description")
+    }
+}
 
 @Preview(showBackground = true, showSystemUi = true)
 @Composable
@@ -145,14 +193,17 @@ fun CardsListPreview() {
         ItemImagem(R.string.N_21_, R.string.D_21_, R.drawable._0_21_theworld),
     )
     val previewNavController = rememberNavController()
-    CardsList(listaDecks = sampleData, navController = previewNavController)
+    CardGrid(listaDecks = sampleData, navController = previewNavController)
 }
+
 @Preview
 @Composable
 fun ImageCardPreview() {
     val previewNavController = rememberNavController()
     ImageCard(
-        itemId = R.drawable._0_00_thefool, itemName = R.string.N_00_, itemDesc = R.string.D_00_,
+        itemId = R.drawable._0_00_thefool,
+        itemName = R.string.N_00_,
+        itemDesc = R.string.D_00_,
         navController = previewNavController
     )
 }

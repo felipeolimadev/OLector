@@ -1,6 +1,5 @@
 package shop.felipeserver.olector
 
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 
@@ -10,13 +9,9 @@ data class ItemImagem(
     val idImagem: Int // 'Int' para referenciar o ID da imagem em res/drawable
 )
 
-object AppConstants {
+object Color {
 
-    //Colors
-    val backgroundColor = Color(0xFF100d0a)
-    val cardTitleColor = Color(0xFFe8d17f)
-    val cardBackgroundColor = Color(0xFF2c100c)
-    val cardBorderColor = Color(0xFF705D23)
+
 
     //Font Sizes
     val cardTitleFontSize = 18.sp
